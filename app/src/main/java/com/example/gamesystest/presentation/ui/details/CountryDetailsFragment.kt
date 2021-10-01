@@ -35,7 +35,7 @@ class CountryDetailsFragment: BaseFragment<FragmentCountryDetailsBinding>() {
     }
 
     override fun observeData() {
-        viewModel.lifeData.observe(viewLifecycleOwner) {
+        viewModel.countries.observe(viewLifecycleOwner) {
             detailAdapter.update(it.list)
         }
     }

@@ -8,7 +8,8 @@ import com.example.gamesystest.presentation.model.Country
 
 class CountryDetailsViewModel @ViewModelInject constructor(): ViewModel() {
 
-    val lifeData: MutableLiveData<ViewState> = MutableLiveData()
+    val countries: MutableLiveData<ViewState> = MutableLiveData()
+
 
     fun loadInformation(element: Country) {
 
@@ -26,6 +27,10 @@ class CountryDetailsViewModel @ViewModelInject constructor(): ViewModel() {
                 descriptionKey = element.region
             ),
             Information.Item(
+                titleKey = "Sub region",
+                descriptionKey = element.subregion
+            ),
+            Information.Item(
                 titleKey = "Calling Codes",
                 descriptionKey = listToString(element.callingCodes)
             ),
@@ -33,8 +38,20 @@ class CountryDetailsViewModel @ViewModelInject constructor(): ViewModel() {
                 titleKey = "Alt Spellings",
                 descriptionKey = listToString(element.altSpellings)
             ),
+            Information.Item(
+                titleKey = "Population",
+                descriptionKey = element.population.toString()
+            ),
+            Information.Item(
+                titleKey = "Native name",
+                descriptionKey = element.nativeName
+            ),
+            Information.Item(
+                titleKey = "Area",
+                descriptionKey = listToString(element.timezones)
+            )
         )
-        lifeData.postValue(ViewState(list))
+        countries.postValue(ViewState(list))
     }
 
     data class ViewState(val list: List<Information.Item>)

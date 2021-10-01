@@ -52,7 +52,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 }
                 is Resources.Failure -> {
                     binding.progressBar.makeGone()
-                    requireContext().toastMessage(getString(R.string.error_message))
+                    requireContext().toastMessage(it.msg)
                 }
                 is Resources.Success -> {
                     binding.progressBar.makeGone()

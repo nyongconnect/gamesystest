@@ -36,7 +36,7 @@ class HomeViewModel @ViewModelInject constructor(
             getAllCountriesUseCase.execute(API_KEY).onStart {
                 getCountriesFromDb()
             }.catch {
-                _countries.postValue(Resources.Failure("Something Happened"))
+                _countries.postValue(Resources.Failure(it.localizedMessage))
             }.collect { countries ->
                 saveCountriesToDb(countries.map { it.toPresentation() })
                 _countries.postValue(Resources.Success(countries.map { it.toPresentation()}))

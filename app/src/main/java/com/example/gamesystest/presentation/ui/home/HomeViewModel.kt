@@ -1,5 +1,6 @@
 package com.example.gamesystest.presentation.ui.home
 
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -47,11 +48,11 @@ class HomeViewModel @ViewModelInject constructor(
     private fun saveCountriesToDb(countries: List<Country>) {
         viewModelScope.launch {
             addCountriesToDbUseCase.execute(countries.map { it.toDomain() }).onStart {
-
+                Log.i(TAG, "saving to db")
             }.catch {
-
+                Log.e(TAG, it.localizedMessage)
             }.collect {
-
+                Log.e(TAG, "Successful")
             }
         }
     }
@@ -61,10 +62,14 @@ class HomeViewModel @ViewModelInject constructor(
             getCountriesFromDb.execute().onStart {
                 _countries.postValue(Resources.Loading(true))
             }.catch {
-
+                Log.e(TAG, it.localizedMessage)
             }.collect {
                 _countries.postValue(Resources.Success(it.map { it.toPresentation() }))
             }
         }
+    }
+
+    companion object{
+        const val TAG = "homeViewModel"
     }
 }

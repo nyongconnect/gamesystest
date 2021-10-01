@@ -26,7 +26,7 @@ class CountryDetailsFragment: BaseFragment<FragmentCountryDetailsBinding>() {
         binding.collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(requireContext(), R.color.toolbar_color))
         binding.collapsingToolbarLayout.expandedTitleGravity = Gravity.BOTTOM
         binding.collapsingToolbarLayout.collapsedTitleGravity = Gravity.CENTER
-        binding.expandedImage.displayImage(args.country.alpha2Code.lowercase().replace("-", "-"), requireContext())
+        binding.expandedImage.displayImage(args.country.alpha2Code.lowercase().replace("-", "_"), requireContext())
 
         detailAdapter = CountryDetailAdapter(requireContext())
         binding.included.informationList.layoutManager = LinearLayoutManager(requireContext())

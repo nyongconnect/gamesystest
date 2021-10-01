@@ -34,7 +34,7 @@ class CountryAdapter(private val context: Context, val onClick:(Country)-> Unit)
 
         fun bind(element: Country) {
             binding.countryName.text = element.name
-            binding.imgFlag.displayImage(element.alpha2Code.lowercase().replace("-", "-"), context)
+            binding.imgFlag.displayImage(element.alpha2Code.lowercase().replace("-", "_"), context)
             itemView.setOnClickListener {
                 onClick.invoke(element)
             }

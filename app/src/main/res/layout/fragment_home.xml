@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4f6f7"
+    android:background="@color/color_off_white"
     tools:context=".presentation.ui.home.HomeFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="@dimen/size_0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,12 +18,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/countryList"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:layout_marginEnd="@dimen/size_16dp"
+            android:layout_marginBottom="@dimen/size_16dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <ProgressBar

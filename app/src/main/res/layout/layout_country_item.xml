@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     app:cardBackgroundColor="@color/white"
-    android:elevation="3dp"
+    android:elevation="@dimen/size_3dp"
     app:cardCornerRadius="3dp"
     app:cardUseCompatPadding="true"
-    android:layout_height="70dp">
+    android:layout_height="@dimen/size_70dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,11 +16,11 @@
 
         <ImageView
             android:id="@+id/img_flag"
-            android:layout_width="54dp"
+            android:layout_width="@dimen/size_54dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginBottom="@dimen/size_8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ng"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,11 +29,11 @@
 
         <TextView
             android:id="@+id/country_name"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/size_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/size_16dp"
             android:gravity="left"
-            android:padding="16dp"
+            android:padding="@dimen/size_16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
             android:textStyle="bold

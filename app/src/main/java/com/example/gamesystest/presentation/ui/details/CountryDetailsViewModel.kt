@@ -19,6 +19,10 @@ class CountryDetailsViewModel @ViewModelInject constructor(): ViewModel() {
                 descriptionKey = element.capital
             ),
             Information.Item(
+                titleKey = "Population",
+                descriptionKey = element.population.toString()
+            ),
+            Information.Item(
                 titleKey = "Alpha2Code",
                 descriptionKey = element.alpha2Code
             ),
@@ -31,24 +35,20 @@ class CountryDetailsViewModel @ViewModelInject constructor(): ViewModel() {
                 descriptionKey = element.subregion
             ),
             Information.Item(
+                titleKey = "Native name",
+                descriptionKey = element.nativeName
+            ),
+            Information.Item(
+                titleKey = "Timezone",
+                descriptionKey = listToString(element.timezones)
+            ),
+            Information.Item(
                 titleKey = "Calling Codes",
                 descriptionKey = listToString(element.callingCodes)
             ),
             Information.Item(
                 titleKey = "Alt Spellings",
                 descriptionKey = listToString(element.altSpellings)
-            ),
-            Information.Item(
-                titleKey = "Population",
-                descriptionKey = element.population.toString()
-            ),
-            Information.Item(
-                titleKey = "Native name",
-                descriptionKey = element.nativeName
-            ),
-            Information.Item(
-                titleKey = "Area",
-                descriptionKey = listToString(element.timezones)
             )
         )
         countries.postValue(ViewState(list))
